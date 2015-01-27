@@ -52,7 +52,7 @@ module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
 
 				if(files.length > 1){
 					_.forEach(files, function(file){
-						if(file.indexOf('Module.js') > -1){
+						if(file.indexOf('module.js') > -1){
 							moduleFiles.push(file);
 
 							// remove from files
