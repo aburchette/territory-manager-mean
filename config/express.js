@@ -33,7 +33,6 @@ module.exports = function(db) {
 	app.locals.title = config.app.title;
 	app.locals.description = config.app.description;
 	app.locals.keywords = config.app.keywords;
-	app.locals.facebookAppId = config.facebook.clientID;
 	app.locals.jsFiles = config.getJavaScriptAssets();
 	app.locals.cssFiles = config.getCSSAssets();
 
@@ -46,6 +45,7 @@ module.exports = function(db) {
 	// Should be placed before express.static
 	app.use(compress({
 		filter: function(req, res) {
+			// compresses these files (true is returned)
 			return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
 		},
 		level: 9
@@ -55,10 +55,10 @@ module.exports = function(db) {
 	app.set('showStackError', true);
 
 	// Set swig as the template engine
-	app.engine('server.view.html', consolidate[config.templateEngine]);
+	app.engine('html', consolidate[config.templateEngine]);
 
 	// Set views path and view engine
-	app.set('view engine', 'server.view.html');
+	app.set('view engine', 'html');
 	app.set('views', './app/views');
 
 	// Environment dependent middleware
@@ -73,9 +73,11 @@ module.exports = function(db) {
 	}
 
 	// Request body parsing middleware should be above methodOverride
+	// parse application/x-www-form-urlencoded
 	app.use(bodyParser.urlencoded({
 		extended: true
 	}));
+	// parse application/json
 	app.use(bodyParser.json());
 	app.use(methodOverride());
 

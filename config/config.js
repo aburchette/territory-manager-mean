@@ -27,6 +27,9 @@ module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
 	// The output array
 	var output = [];
 
+	// console.log('------------');
+	// console.log(globPatterns);
+
 	// If glob pattern is array so we use each pattern in a recursive way, otherwise we use glob 
 	if (_.isArray(globPatterns)) {
 		globPatterns.forEach(function(globPattern) {
@@ -39,16 +42,35 @@ module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
 			glob(globPatterns, {
 				sync: true
 			}, function(err, files) {
+				var moduleFiles = [];
+
 				if (removeRoot) {
 					files = files.map(function(file) {
 						return file.replace(removeRoot, '');
 					});
 				}
 
+				if(files.length > 1){
+					_.forEach(files, function(file){
+						if(file.indexOf('Module.js') > -1){
+							moduleFiles.push(file);
+
+							// remove from files
+						}
+					});
+				}
+
+				console.log(files);
+
 				output = _.union(output, files);
+
+				output = moduleFiles.concat(output);
 			});
 		}
 	}
+
+	// console.log('*************');
+	// console.log(output);
 
 	return output;
 };

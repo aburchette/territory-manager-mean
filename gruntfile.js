@@ -4,8 +4,9 @@ module.exports = function(grunt) {
 	// Unified Watch Object
 	var watchFiles = {
 		serverViews: ['app/views/**/*.*'],
-		serverJS: ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
-		clientViews: ['public/modules/**/views/**/*.html'],
+		serverJS: ['gruntfile.js', 'server.js', 'config/*.js', 'config/**/*.js', 'app/**/*.js'],
+		// views can be in the view folder or subfolder
+		clientViews: ['public/modules/**/views/*.html', 'public/modules/**/views/**/*.html'],
 		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
 		clientCSS: ['public/modules/**/*.css'],
 		mochaTests: ['app/tests/**/*.js']
@@ -92,6 +93,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		// 0.0.0.0:1337
 		'node-inspector': {
 			custom: {
 				options: {
@@ -155,7 +157,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['lint', 'concurrent:default']);
+	grunt.registerTask('default', ['concurrent:default']);
 
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);

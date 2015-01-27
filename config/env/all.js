@@ -2,13 +2,13 @@
 
 module.exports = {
 	app: {
-		title: 'MEAN.JS',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'mongodb, express, angularjs, node.js, mongoose, passport'
+		title: 'territory-manager',
+		description: 'Territory Manager',
+		keywords: ''
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',
-	sessionSecret: 'MEAN',
+	sessionSecret: 'cogh2Ne5oS3bUc4shooG4iV2',
 	sessionCollection: 'sessions',
 	assets: {
 		lib: {
