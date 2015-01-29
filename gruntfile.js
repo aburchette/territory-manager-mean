@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			},
 			serverJS: {
 				files: watchFiles.serverJS,
-				tasks: ['jshint'],
+				//tasks: ['jshint'],
 				options: {
 					livereload: true
 				}
@@ -37,14 +37,14 @@ module.exports = function(grunt) {
 			},
 			clientJS: {
 				files: watchFiles.clientJS,
-				tasks: ['jshint'],
+				//tasks: ['jshint'],
 				options: {
 					livereload: true
 				}
 			},
 			clientCSS: {
 				files: watchFiles.clientCSS,
-				tasks: ['csslint'],
+				//tasks: ['csslint'],
 				options: {
 					livereload: true
 				}
