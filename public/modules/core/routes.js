@@ -7,10 +7,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		$urlRouterProvider.otherwise('/');
 
 		// Home state routing
-		$stateProvider.
-		state('home', {
-			url: '/',
-			templateUrl: 'modules/core/views/home.html'
-		});
+        $stateProvider.
+			state('home', {
+                url: '/',
+				templateUrl: 'modules/core/views/home.html'
+			});
 	}
 ]);
