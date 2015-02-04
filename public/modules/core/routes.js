@@ -8,8 +8,16 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
 		// Home state routing
         $stateProvider.
-			state('home', {
+            state('territories', {
                 url: '/',
+                templateUrl: 'modules/core/views/territories.html'
+            }).
+            state('territories.territory', {
+                url: '/territories/:territoryId',
+                templateUrl: 'modules/core/views/territory.html'
+            }).
+			state('main', {
+                url: '/main',
 				templateUrl: 'modules/core/views/home.html'
 			});
 	}
