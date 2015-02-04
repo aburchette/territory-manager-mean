@@ -8,15 +8,15 @@ angular.module('setup').config(['$stateProvider',
                 url: '/setup',
 				templateUrl: 'modules/setup/views/index.html'
 			}).
-			state('setupUsers', {
+			state('setup.users', {
                 url: '/setup/users',
 				templateUrl: 'modules/setup/views/users.html'
 			}).
-			state('setupPeople', {
+			state('setup.people', {
                 url: '/setup/people',
 				templateUrl: 'modules/setup/views/people.html'
 			}).
-			state('setupMap', {
+			state('setup.map', {
                 url: '/setup/map',
 				templateUrl: 'modules/setup/views/map.html'
 			});
