@@ -28,7 +28,7 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+	<header ng-include="'/modules/core/views/header.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
 		<section class="container">
 			{% block content %}{% endblock %}
@@ -43,16 +43,6 @@
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>
 	{% endfor %}
-
-	<!--<script type="text/javascript" src="lib/angular/angular.js"></script>-->
-	<!--<script type="text/javascript" src="lib/angular-resource/angular-resource.js"></script>-->
-	<!--<script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>-->
-	<!--<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.js"></script>-->
-	<!--<script type="text/javascript" src="lib/angular-ui-utils/ui-utils.js"></script>-->
-	<!--<script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
-	<!--<script type="text/javascript" src="config.js"></script>-->
-	<!--<script type="text/javascript" src="application.js"></script>-->
-
 
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
