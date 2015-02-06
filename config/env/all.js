@@ -32,7 +32,9 @@ module.exports = {
 			'public/config.js',
 			'public/application.js',
             'public/modules/*/module.js',
-            'public/modules/*/*[!module]*.js',
+            'public/modules/*/services.js',
+            'public/modules/*/controllers.js',
+            'public/modules/*/routes.js',
 			'public/modules/*/*[!tests]*/*.js'
 		],
 		tests: [
