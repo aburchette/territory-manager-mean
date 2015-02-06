@@ -12,50 +12,46 @@ angular.module('setup').config(['$stateProvider',
             }).
 
             state('setup.users', {
-                url: '/setup/users',
-                controller: 'SetupCtrl',
+                url: '/users',
+                controller: 'UsersCtrl',
                 templateUrl: 'modules/setup/views/users.html'
             }).
             state('setup.users.detail', {
-                url: '/setup/users/{userId}',
-                controller: 'SetupCtrl',
+                url: '/{userId}',
                 templateUrl: 'modules/setup/views/users.detail.html'
             }).
             state('setup.users.detail.edit', {
-                url: '/setup/users/{userId}',
-                controller: 'SetupCtrl',
+                url: '/edit',
                 templateUrl: 'modules/setup/views/users.detail.edit.html'
             }).
 
             state('setup.admin', {
-                url: '/setup/admin',
-                controller: 'SetupCtrl',
+                url: '/admin',
+                controller: 'AdminCtrl',
                 templateUrl: 'modules/setup/views/admin.html'
             }).
             state('setup.admin.detail', {
-                url: '/setup/admin/{adminId}',
-                controller: 'SetupCtrl',
+                url: '/{adminId}',
                 templateUrl: 'modules/setup/views/admin.detail.html'
             }).
             state('setup.admin.detail.edit', {
-                url: '/setup/admin/{adminId}',
-                controller: 'SetupCtrl',
+                url: '/edit',
                 templateUrl: 'modules/setup/views/admin.detail.edit.html'
             }).
 
             state('setup.streets', {
-                url: '/setup/streets',
-                controller: 'SetupCtrl',
+                url: '/streets',
+                controller: 'StreetsCtrl',
                 templateUrl: 'modules/setup/views/streets.html'
             }).
             state('setup.upload', {
-                url: '/setup/upload',
-                controller: 'SetupCtrl',
+                url: '/upload',
+                controller: 'UploadCtrl',
                 templateUrl: 'modules/setup/views/upload.html'
             }).
             state('setup.map', {
-                url: '/setup/map',
-                controller: 'SetupCtrl',
+                url: '/map',
+                controller: 'MapCtrl',
                 templateUrl: 'modules/setup/views/map.html'
             });
     }
