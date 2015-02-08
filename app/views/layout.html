@@ -27,13 +27,16 @@
 	<![endif]-->
 </head>
 
-<body class="ng-cloak">
-	<!--<header ng-include="'/modules/core/views/header.html'" class="navbar navbar-fixed-top navbar-inverse"></header>-->
-	<section class="content">
+<body class="ng-cloak" ng-controller="MainCtrl">
+	<header ng-include="'/modules/core/views/header.html'" class=""></header>
+
+    <section class="content">
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
 	</section>
+
+    <div ng-include="'/modules/core/views/footer.html'" class="footer"></div>
 
 	<!--Embedding The User Object-->
 	<script type="text/javascript">

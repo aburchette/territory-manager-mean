@@ -13,7 +13,7 @@ angular.module('setup').
         $scope.params = $stateParams;
 
     }]).
-    controller('MapCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+    controller('DrawMapCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
         $scope.params = $stateParams;
 
     }]).
@@ -24,5 +24,5 @@ angular.module('setup').
     controller('UploadCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
         $scope.params = $stateParams;
 
-    }]);
+    }])
 ;
