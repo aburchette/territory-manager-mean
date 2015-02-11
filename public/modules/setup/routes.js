@@ -11,6 +11,20 @@ angular.module('setup').config(['$stateProvider',
                 templateUrl: 'modules/setup/views/setup.html'
             }).
 
+            state('setup.agents', {
+                url: '/agents',
+                controller: 'AgentsCtrl',
+                templateUrl: 'modules/setup/views/agents.html'
+            }).
+            state('setup.agents.detail', {
+                url: '/{agentId}',
+                templateUrl: 'modules/setup/views/agents.detail.html'
+            }).
+            state('setup.agents.detail.edit', {
+                url: '/edit',
+                templateUrl: 'modules/setup/views/agents.detail.edit.html'
+            }).
+
             state('setup.users', {
                 url: '/users',
                 controller: 'UsersCtrl',
@@ -23,20 +37,6 @@ angular.module('setup').config(['$stateProvider',
             state('setup.users.detail.edit', {
                 url: '/edit',
                 templateUrl: 'modules/setup/views/users.detail.edit.html'
-            }).
-
-            state('setup.admin', {
-                url: '/admin',
-                controller: 'AdminCtrl',
-                templateUrl: 'modules/setup/views/admin.html'
-            }).
-            state('setup.admin.detail', {
-                url: '/{adminId}',
-                templateUrl: 'modules/setup/views/admin.detail.html'
-            }).
-            state('setup.admin.detail.edit', {
-                url: '/edit',
-                templateUrl: 'modules/setup/views/admin.detail.edit.html'
             }).
 
             state('setup.streets', {

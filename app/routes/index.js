@@ -10,7 +10,6 @@ module.exports = function(app) {
     app.route('/admin').get(core.admin);
     app.route('/signup').get(core.signup);
     app.route('/reset-password').get(core.resetPassword);
-    app.route('/admin').get(core.admin);
 
     // require authentication
     //app.all('/*/*', function(req, res, next){ console.log(req, res); next(); });

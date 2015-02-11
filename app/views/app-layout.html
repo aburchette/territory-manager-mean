@@ -18,6 +18,8 @@
     <!--Application CSS Files-->
     {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">
     {% endfor %}
+    <link rel="stylesheet" href="/modules/core/css/theme.css" />
+
 
     <!-- HTML5 Shim -->
     <!--[if lt IE 9]>
@@ -26,15 +28,13 @@
 </head>
 
 <body class="ng-cloak" ng-controller="MainCtrl">
-<header ng-include="'/modules/core/views/header.html'" class=""></header>
+    <nav ng-include="'/modules/core/views/header.html'" class="navbar navbar-inverse navbar-fixed-top"></nav>
 
-<section class="content">
-    <section class="container">
+    <div class="container theme-showcase" role="main">
         {% block content %}{% endblock %}
-    </section>
-</section>
+    </div>
 
-<div ng-include="'/modules/core/views/footer.html'" class="footer"></div>
+    <nav ng-include="'/modules/core/views/footer.html'" class="navbar navbar-fixed-bottom"></nav>
 
 <!--Embedding The User Object-->
 <script type="text/javascript">
