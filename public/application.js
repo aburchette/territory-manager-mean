@@ -6,7 +6,10 @@ angular.module(AppConfig.name, AppConfig.deps);
 // Setting HTML5 Location Mode
 angular.module(AppConfig.name).config(['$locationProvider',
 	function($locationProvider) {
-		//$locationProvider.hashPrefix('!');
+        //console.log($browser);
+        //$browser.baseHref = function() { return '/'; };
+        //$locationProvider.html5Mode(false);
+        //$locationProvider.hashPrefix('/');
 	}
 ]);
 

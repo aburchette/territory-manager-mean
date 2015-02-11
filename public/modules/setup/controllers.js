@@ -5,11 +5,11 @@ angular.module('setup').
         $scope.params = $stateParams;
 
     }]).
-    controller('AdminCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+    controller('UsersCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
         $scope.params = $stateParams;
 
     }]).
-    controller('UsersCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+    controller('AgentsCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
         $scope.params = $stateParams;
 
     }]).

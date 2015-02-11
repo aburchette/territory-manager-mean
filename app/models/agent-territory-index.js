@@ -13,10 +13,12 @@ var PersonTerritoryIndexSchema = new Schema({
         required: 'Group ID is required'
     },
     person_id: {
-        type: ObjectId
+        type: Schema.ObjectId,
+        ref: 'Person'
     },
     territory_id: {
-        type: ObjectId
+        type: Schema.ObjectId,
+        ref: 'Territory'
     },
     checked_out: {
         type: Date
