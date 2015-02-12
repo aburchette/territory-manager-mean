@@ -15,9 +15,12 @@
 	<!-- Fav Icon -->
 	<link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
+    <base href="/app"/>
+
 	<!--Application CSS Files-->
 	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">
 	{% endfor %}
+    <link rel="stylesheet" href="/modules/users/css/users.css"/>
 
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
@@ -26,7 +29,7 @@
 </head>
 
 <body>
-    <header></header>
+    <nav ng-include="'/modules/core/views/header.html'" class="navbar navbar-inverse navbar-fixed-top"></nav>
 
     <section class="content">
 		<section class="container">
@@ -38,6 +41,13 @@
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};
 	</script>
+
+    <!--Application JavaScript Files-->
+    {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>
+    {% endfor %}
+    <!--{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>-->
+    <!--{% endfor %}-->
+
 
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->

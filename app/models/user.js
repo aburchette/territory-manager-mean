@@ -54,6 +54,10 @@ var UserSchema = new Schema({
 		required: 'Please fill in a username',
 		trim: true
 	},
+    group: {
+        type: String,
+        unique: 'Group already taken'
+    },
 	password: {
 		type: String,
 		default: '',
@@ -71,9 +75,9 @@ var UserSchema = new Schema({
 	roles: {
 		type: [{
 			type: String,
-			enum: ['user', 'admin']
+			enum: ['viewer', 'editor', 'admin', 'superAdmin']
 		}],
-		default: ['user']
+		default: ['admin']
 	},
 	updated: {
 		type: Date
