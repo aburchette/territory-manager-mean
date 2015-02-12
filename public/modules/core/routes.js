@@ -8,7 +8,7 @@ angular.module('main').config(['$stateProvider', '$urlRouterProvider',
 
         $stateProvider.
             state('main', {
-                url: '/',
+                url: '/' + group,
                 controller: 'MainCtrl',
                 templateUrl: 'modules/core/views/main.html'
             });

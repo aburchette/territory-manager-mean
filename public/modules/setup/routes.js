@@ -6,7 +6,7 @@ angular.module('setup').config(['$stateProvider',
 
         $stateProvider.
             state('setup', {
-                url: '/setup',
+                url: '/' + group + '/setup',
                 controller: 'SetupCtrl',
                 templateUrl: 'modules/setup/views/setup.html'
             }).

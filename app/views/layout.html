@@ -26,7 +26,7 @@
     <![endif]-->
 </head>
 
-<body class="ng-cloak" ng-controller="MainCtrl">
+<body class="ng-cloak">
     <nav ng-include="'/modules/core/views/header.html'" class="navbar navbar-inverse navbar-fixed-top"></nav>
 
     <div class="container theme-showcase" role="main">
@@ -37,8 +37,8 @@
 
     <!--Embedding The User Object-->
     <script type="text/javascript">
-    var user = {{ user | json | safe }};
-    var group = 'atlanta';
+    window.user = {{ user | json | safe }};
+    window.group = 'sales-team';
     </script>
 
     <!--Application JavaScript Files-->
