@@ -7,8 +7,7 @@ angular.module(AppConfig.name, AppConfig.deps);
 angular.module(AppConfig.name).config(['$locationProvider',
 	function($locationProvider) {
         //console.log($browser);
-        //$browser.baseHref = function() { return '/'; };
-        //$locationProvider.html5Mode(false);
+        $locationProvider.html5Mode(true);
         //$locationProvider.hashPrefix('/');
 	}
 ]);
