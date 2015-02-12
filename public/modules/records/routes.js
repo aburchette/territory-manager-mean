@@ -6,7 +6,7 @@ angular.module('records').config(['$stateProvider',
 
         $stateProvider.
             state('records', {
-                url: '/records',
+                url: '/' + group + '/records',
                 controller: 'RecordsCtrl',
                 templateUrl: 'modules/records/views/records.html'
             }).

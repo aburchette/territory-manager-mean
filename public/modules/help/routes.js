@@ -6,7 +6,7 @@ angular.module('help').config(['$stateProvider',
 
         $stateProvider.
             state('help', {
-                url: '/help',
+                url: '/' + group + '/help',
                 controller: 'HelpCtrl',
                 templateUrl: 'modules/help/views/help.html'
             }).

@@ -7,7 +7,7 @@ angular.module('territories').config(['$stateProvider',
 
         $stateProvider.
             state('territories', {
-                url: '/territories',
+                url: '/' + group + '/territories',
                 controller: 'TerritoriesCtrl',
                 templateUrl: 'modules/territories/views/territories.html'
             }).
