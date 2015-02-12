@@ -7,7 +7,7 @@ angular.module(AppConfig.name, AppConfig.deps);
 angular.module(AppConfig.name).config(['$locationProvider',
 	function($locationProvider) {
         //console.log($browser);
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true).hashPrefix('!');
         //$locationProvider.hashPrefix('/');
 	}
 ]);
