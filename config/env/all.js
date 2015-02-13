@@ -31,19 +31,13 @@ module.exports = {
 		js: [
 			'public/config.js',
 			'public/application.js',
+            'public/controllers.js',
             'public/modules/*/module.js',
             'public/modules/*/services.js',
             'public/modules/*/controllers.js',
             'public/modules/*/routes.js',
 			'public/modules/*/*[!tests]*/*.js'
 		],
-        jsAdmin: [
-            'public/adminModules/*/module.js',
-            'public/adminModules/*/services.js',
-            'public/adminModules/*/controllers.js',
-            'public/adminModules/*/routes.js',
-            'public/adminModules/*/*[!tests]*/*.js'
-        ],
 		tests: [
 			'public/lib/angular-mocks/angular-mocks.js',
 			'public/modules/*/tests/*.js'
