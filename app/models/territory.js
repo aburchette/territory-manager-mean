@@ -13,16 +13,27 @@ var TerritorySchema = new Schema({
         required: 'Group ID required'
     },
     name: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     polygon: {
-        type: String
+        type: [{
+            type: [{
+                type: Number
+            }]
+        }],
+        default: [[0, 0]]
     },
     locale: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     notes: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     updated: {
         type: Date

@@ -13,10 +13,14 @@ var PersonSchema = new Schema({
         required: 'Group ID is required'
     },
     name: {
-        type: String
+        type: String,
+        trim: true,
+        required: 'Full name required'
     },
     phone: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     active: {
         type: Boolean,

@@ -9,7 +9,9 @@ var ConfigSchema = new Schema({
         required: 'Group ID required'
     },
     name: {
-        type: String
+        type: String,
+        unique: true,
+        trim: true
     },
     value: {
         type: String
