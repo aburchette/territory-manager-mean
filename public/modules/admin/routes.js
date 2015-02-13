@@ -4,8 +4,6 @@
 angular.module('admin').config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/admin');
-
         $stateProvider.
             state('admin', {
                 url: '/admin',
