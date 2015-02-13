@@ -5,12 +5,12 @@ angular.module('users').config(['$stateProvider',
 	function($stateProvider) {
 		// Users state routing
 		$stateProvider.
-            state('profile', {
-                url: '/settings/profile',
-                templateUrl: 'modules/users/views/edit-profile.html'
-            }).
+            //state('profile', {
+            //    url: '/settings/profile',
+            //    templateUrl: 'modules/users/views/edit-profile.html'
+            //}).
             state('password', {
-                url: '/settings/password',
+                url: '/password',
                 templateUrl: 'modules/users/views/change-password.html'
             }).
             state('signup', {
