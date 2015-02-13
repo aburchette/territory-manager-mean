@@ -8,6 +8,9 @@ module.exports = function(app) {
     app.route('/api/signup').
         post(core.signup);
 
-    app.all('/*', core.index);
+    app.route('/api/signin').
+        post(core.signin);
 
+    app.all('/*', core.index);
+    //app.all('/', core.index);
 };

@@ -5,6 +5,7 @@
  */
 var express = require('express'),
 	morgan = require('morgan'),
+    http = require('http'),
 	bodyParser = require('body-parser'),
 	session = require('express-session'),
 	compress = require('compression'),
@@ -18,11 +19,14 @@ var express = require('express'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
-	path = require('path');
+	path = require('path'),
+    socketio = require('socket.io');
 
 module.exports = function(db) {
 	// Initialize express app
-	var app = express();
+	var app = express(),
+        server = http.createServer(app),
+        io = socketio.listen(server);
 
 	// Globbing model files
 	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
@@ -140,6 +144,8 @@ module.exports = function(db) {
 			error: 'Not Found'
 		});
 	});
+
+    require('./socket.io')(server, io, mongoStore);
 
 	return app;
 };
