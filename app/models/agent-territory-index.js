@@ -12,9 +12,9 @@ var PersonTerritoryIndexSchema = new Schema({
         type: Number,
         required: 'Group ID is required'
     },
-    person_id: {
+    agent_id: {
         type: Schema.ObjectId,
-        ref: 'Person'
+        ref: 'Agent'
     },
     territory_id: {
         type: Schema.ObjectId,

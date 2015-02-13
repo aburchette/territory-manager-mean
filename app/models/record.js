@@ -24,14 +24,20 @@ var RecordSchema = new Schema({
     },
     address: {
         type: String,
-        required: 'Address is required'
+        required: 'Address is required',
+        default: '',
+        trim: true
     },
     address2: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     city: {
         type: String,
-        required: 'City is required'
+        required: 'City is required',
+        default: '',
+        trim: true
     },
     state: {
         type: String,
@@ -40,16 +46,21 @@ var RecordSchema = new Schema({
         required: 'Select a valid state'
     },
     phone: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
     notes: {
-        type: String
+        type: String,
+        default: '',
+        trim: true
     },
-    lat: {
-        type: Number
-    },
-    lon: {
-        type: Number
+    location: {
+        type: [{
+            type: Number
+        }],
+        index: '2d',
+        default: [0, 0]
     }
 });
 
