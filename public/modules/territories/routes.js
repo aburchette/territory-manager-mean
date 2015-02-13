@@ -7,29 +7,25 @@ angular.module('territories').config(['$stateProvider',
 
         $stateProvider.
             state('territories', {
-                url: '/' + group + '/territories',
+                url: '/' + user.group + '/territories',
                 controller: 'TerritoriesCtrl',
                 templateUrl: 'modules/territories/views/territories.html'
             }).
-            state('territoriesFilter', {
-                url: '/territories/filter/{filterId}',
-                controller: 'TerritoriesCtrl',
+            state('territories.filter', {
+                url: '/filter/{filterId}',
                 templateUrl: 'modules/territories/views/territories.html'
             }).
-
-            state('territory', {
-                url: '/territories/{territoryId}',
+            state('territories.detail', {
+                url: '/{territoryId}',
                 controller: 'TerritoryCtrl',
                 templateUrl: 'modules/territories/views/territory.html'
             }).
-            state('territoryMap', {
-                url: '/territories/{territoryId}/map',
-                controller: 'TerritoryCtrl',
+            state('territories.detail.map', {
+                url: '/map',
                 templateUrl: 'modules/territories/views/territory-map.html'
             }).
-            state('territoryList', {
-                url: '/territories/{territoryId}/list',
-                controller: 'TerritoryCtrl',
+            state('territories.detail.list', {
+                url: '/list',
                 templateUrl: 'modules/territories/views/territory-list.html'
             });
     }

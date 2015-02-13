@@ -4,11 +4,11 @@
 angular.module('main').config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/' + user.group);
 
         $stateProvider.
             state('main', {
-                url: '/' + group,
+                url: '/' + user.group,
                 controller: 'MainCtrl',
                 templateUrl: 'modules/core/views/main.html'
             });

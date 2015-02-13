@@ -6,7 +6,7 @@ angular.module('maintenance').config(['$stateProvider',
 
         $stateProvider.
             state('maintenance', {
-                url: '/' + group + '/maintenance',
+                url: '/' + user.group + '/maintenance',
                 controller: 'MaintenanceCtrl',
                 templateUrl: 'modules/maintenance/views/maintenance.html'
             }).

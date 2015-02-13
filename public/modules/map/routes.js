@@ -6,7 +6,7 @@ angular.module('map').config(['$stateProvider',
 
         $stateProvider.
             state('map', {
-                url: '/' + group + '/map',
+                url: '/' + user.group + '/map',
                 controller: 'MapCtrl',
                 templateUrl: 'modules/map/views/map.html'
             });

@@ -1,18 +1,18 @@
 'use strict';
 
-//Start by defining the main module and adding the module dependencies
+// define module and dependencies
 angular.module(AppConfig.name, AppConfig.deps);
 
-// Setting HTML5 Location Mode
-angular.module(AppConfig.name).config(['$locationProvider',
-	function($locationProvider) {
-        $locationProvider.html5Mode(true).hashPrefix('!');
-	}
-]);
+// application configuration
+angular.module(AppConfig.name).
+    config(['$locationProvider',
+        function($locationProvider) {
+            // removes hashtag in modern browsers
+            $locationProvider.html5Mode(true).hashPrefix('!');
+        }
+    ]);
 
-//Then define the init function for starting up the application
+// Bootstrap the app
 angular.element(document).ready(function() {
-
-	//Init the app
 	angular.bootstrap(document, [AppConfig.name]);
 });
