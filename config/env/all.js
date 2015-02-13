@@ -2,9 +2,8 @@
 
 module.exports = {
 	app: {
-		title: 'territory-manager',
-		description: 'Territory Manager',
-		keywords: ''
+		title: 'Territory Manager',
+		description: 'Territory Manager'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',
