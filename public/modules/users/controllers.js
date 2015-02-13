@@ -43,7 +43,7 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
 	}
 ]);
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$http', '$location', 'Authentication',
+angular.module('users').controller('AuthCtrl', ['$scope', '$http', '$location', 'Authentication',
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 

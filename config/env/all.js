@@ -16,6 +16,8 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css'
 			],
 			js: [
+                'socket.io/socket.io.js',
+                'public/lib/socket.io-client/socket.io-client.js',
 				'public/lib/angular/angular.js',
 				'public/lib/angular-resource/angular-resource.js',
 				'public/lib/angular-animate/angular-animate.js',
