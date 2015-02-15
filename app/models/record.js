@@ -56,11 +56,8 @@ var RecordSchema = new Schema({
         trim: true
     },
     location: {
-        type: [{
-            type: Number
-        }],
-        index: '2d',
-        default: [0, 0]
+        type: [Number],
+        index: '2dsphere'
     }
 });
 

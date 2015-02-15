@@ -1,0 +1,11 @@
+<section ng-controller="ImportCtrl">
+    <h1>Import</h1>
+    <p>{{params}}</p>
+    <p>Please choose what to import</p>
+
+    <form>
+        <select name="importItem" id="importItem" ng-repeat="item in items">
+            <option value="item.value">item.name</option>
+        </select>
+    </form>
+</section>

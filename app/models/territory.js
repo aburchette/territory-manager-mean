@@ -18,12 +18,8 @@ var TerritorySchema = new Schema({
         trim: true
     },
     polygon: {
-        type: [{
-            type: [{
-                type: Number
-            }]
-        }],
-        default: [[0, 0]]
+        type: [Number],
+        index: '2dsphere'
     },
     locale: {
         type: String,

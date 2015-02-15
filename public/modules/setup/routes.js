@@ -44,10 +44,10 @@ angular.module('setup').config(['$stateProvider',
                 controller: 'StreetsCtrl',
                 templateUrl: 'modules/setup/views/streets.html'
             }).
-            state('setup.upload', {
-                url: '/upload',
-                controller: 'UploadCtrl',
-                templateUrl: 'modules/setup/views/upload.html'
+            state('setup.import', {
+                url: '/import',
+                controller: 'ImportCtrl',
+                templateUrl: 'modules/setup/views/import.html'
             }).
             state('setup.map', {
                 url: '/map',
