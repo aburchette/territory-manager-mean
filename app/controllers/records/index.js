@@ -8,7 +8,7 @@ exports.list = function(req, res) {
     var obj = {};
 
     // set up
-    Record.find()
+    //Record.find()
 
     res.json(obj);
 };

@@ -1,11 +1,19 @@
 <section ng-controller="ImportCtrl">
-    <h1>Import</h1>
-    <p>{{params}}</p>
+    <h3>Import</h3>
     <p>Please choose what to import</p>
 
     <form>
-        <select name="importItem" id="importItem" ng-repeat="item in items">
-            <option value="item.value">item.name</option>
+        <select name="importItem" id="importItem">
+            <option value="{{item.value}}" ng-repeat="item in items">{{item.name}}</option>
         </select>
     </form>
+
+    <!--There is a bug in the angular-csv-import module that breaks when trying to change the separator. For now this has-->
+    <!--been removed from the directive template-->
+    <ng-csv-import content="csv.content" header="true" separator="," result="csv.result"></ng-csv-import>
+
+    <div ng-if="csv.result">
+        <pre>{{csv.result}}</pre>
+    </div>
+
 </section>

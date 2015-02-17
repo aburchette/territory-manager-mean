@@ -1,3 +1,3 @@
 'use strict';
 
-AppConfig.registerModule('setup');
+AppConfig.registerModule('setup', ['ngCsvImport']);

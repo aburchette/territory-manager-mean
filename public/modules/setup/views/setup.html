@@ -1,12 +1,11 @@
 <section ng-controller="SetupCtrl">
-    <h1>Setup</h1>
-    <p>{{params}}</p>
-    <ul>
+    <h2>Setup</h2>
+    <ul class="nav nav-pills">
         <li><a ui-sref=".users">Users</a></li>
         <li><a ui-sref=".agents">Agents</a></li>
         <li><a ui-sref=".map">Map</a></li>
         <li><a ui-sref=".streets">Streets</a></li>
-        <li><a ui-sref=".upload">Upload</a></li>
+        <li><a ui-sref=".import">Import</a></li>
     </ul>
     <div ui-view></div>
 </section>

@@ -33,7 +33,7 @@ angular.module('setup').
             {value: 'agent-territory-index', name: 'Agent-Territory Index'},
             {value: 'config', name: 'Configuration'}
 
-        ]
+        ];
 
     }])
 ;

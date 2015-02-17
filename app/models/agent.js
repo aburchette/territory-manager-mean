@@ -3,7 +3,10 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var PersonSchema = new Schema({
+var AgentSchema = new Schema({
+    _id: {
+        type: Number
+    },
     created: {
         type: Date,
         default: Date.now
@@ -28,4 +31,4 @@ var PersonSchema = new Schema({
     }
 });
 
-mongoose.model('Person', PersonSchema);
+mongoose.model('Agent', AgentSchema);
