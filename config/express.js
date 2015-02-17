@@ -51,6 +51,7 @@ module.exports = function(db) {
 			// compresses these files (true is returned)
 			return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
 		},
+        // highest level
 		level: 9
 	}));
 

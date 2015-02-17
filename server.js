@@ -29,7 +29,7 @@ require('./config/passport')();
 app.listen(config.port);
 
 // Expose app
-exports = module.exports = app;
+var exports = module.exports = app;
 
 // Logging initialization
 console.log('Territory Manager application started on port ' + config.port);

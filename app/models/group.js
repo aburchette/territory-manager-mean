@@ -8,12 +8,12 @@ var mongoose = require('mongoose'),
  * which will be used to search the database to prevent having to use ObjectId
  */
 var GroupSchema = new Schema({
+    _id: {
+        type: Number
+    },
     created: {
         type: Date,
         default: Date.now
-    },
-    number: {
-        type: Number
     },
     name: {
         type: String

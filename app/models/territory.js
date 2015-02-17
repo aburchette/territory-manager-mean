@@ -4,6 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var TerritorySchema = new Schema({
+    _id: {
+        type: Number
+    },
     created: {
         type: Date,
         default: Date.now
