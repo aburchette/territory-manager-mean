@@ -33,10 +33,12 @@ module.exports = function(app) {
     //    get(records.sortFilter);
 
     // territories are created on the 'map' page, so there is no post to create them here
-    //app.route('/api/territories').
-    //    get(territories.list);
-    //app.route('/api/territories/:territoryId').
-    //    get(territories.findOne);
+    app.route('/api/territories').
+        get(territories.list);
+    app.route('/api/territories/:id').
+        get(territories.findOne).
+        put(territories.update);
+
     //app.route('/api/territories/:territoryId/edit').
     //    get(territories.edit);
     //
