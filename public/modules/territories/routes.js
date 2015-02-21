@@ -15,16 +15,22 @@ angular.module('territories').config(['$stateProvider',
                 url: '/filter/{filterId}',
                 templateUrl: 'modules/territories/views/territories.html'
             }).
-            state('territories.detail', {
-                url: '/{territoryId}',
+
+            state('territory', {
+                url: '/' + user.group + '/territories/{territoryId}',
                 controller: 'TerritoryCtrl',
                 templateUrl: 'modules/territories/views/territory.html'
             }).
-            state('territories.detail.map', {
+            state('territory.edit', {
+                url: '/edit',
+                controller: 'TerritoryCtrl',
+                templateUrl: 'modules/territories/views/territory-edit.html'
+            }).
+            state('territory.map', {
                 url: '/map',
                 templateUrl: 'modules/territories/views/territory-map.html'
             }).
-            state('territories.detail.list', {
+            state('territory.list', {
                 url: '/list',
                 templateUrl: 'modules/territories/views/territory-list.html'
             });

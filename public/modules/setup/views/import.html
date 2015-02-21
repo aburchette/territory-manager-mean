@@ -8,12 +8,23 @@
         </select>
     </form>
 
-    <!--There is a bug in the angular-csv-import module that breaks when trying to change the separator. For now this has-->
-    <!--been removed from the directive template-->
-    <ng-csv-import content="csv.content" header="true" separator="," result="csv.result"></ng-csv-import>
+    <ng-file-to-json result="obj" type-field="true"></ng-file-to-json>
 
-    <div ng-if="csv.result">
-        <pre>{{csv.result}}</pre>
+    <div ng-if="result">
+        <div class="table-container">
+            <table class="table table-striped table-small table-bordered table-responsive">
+                <tr>
+                    <th ng-repeat="header in result.headers">{{ header }}</th>
+                </tr>
+                <tr ng-repeat="row in result.rows">
+                    <td ng-repeat="column in row track by $index">{{ column }}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
 </section>
+
+<script>
+
+</script>

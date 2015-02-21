@@ -1,3 +1,3 @@
 'use strict';
 
-AppConfig.registerModule('territories');
+AppConfig.registerModule('territories', ['ngResource']);

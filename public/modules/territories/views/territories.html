@@ -1,5 +1,22 @@
 <section ng-controller="TerritoriesCtrl">
     <h1>Territories</h1>
-    <p>{{params}}</p>
-    <section ui-view></section>
+
+    <div ng-if="territories">
+        <table class="table table-small table-striped table-bordered table-responsive">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Locale</th>
+                <th>Notes</th>
+                <th>Created</th>
+            </tr>
+            <tr ng-repeat="row in territories" ui-sref="territory({ territoryId: row._id })">
+                <td>{{ row._id }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.locale }}</td>
+                <td>{{ row.notes }}</td>
+                <td>{{ row.created }}</td>
+            </tr>
+        </table>
+    </div>
 </section>

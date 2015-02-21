@@ -1,5 +1,9 @@
-<section ng-controller="TerritoriesCtrl">
-    <h1>Territory</h1>
-    <p>{{params}}</p>
+<section ng-controller="TerritoryCtrl">
+    <a href="javascript:window.history.back()">Back</a>
+    <h1>Territory {{ territory._id }}</h1>
+    <p>{{ territory.name }}</p>
+    <p>{{ territory.locale }}</p>
+    <p>{{ territory.notes }}</p>
+    <a ui-sref="territory.edit({ territoryId:territory._id})">Edit</a>
     <section ui-view></section>
 </section>

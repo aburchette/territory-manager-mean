@@ -1,3 +1,3 @@
 'use strict';
 
-AppConfig.registerModule('setup', ['ngCsvImport']);
+AppConfig.registerModule('setup', ['ngFileToJson']);

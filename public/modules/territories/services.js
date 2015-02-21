@@ -1,3 +1,5 @@
-/**
- * Created by alan on 2/20/15.
- */
+'use strict';
+
+angular.module('territories').factory('Territory', function($resource){
+    return $resource('/api/territories/:id');
+});

@@ -32,8 +32,26 @@ angular.module('setup').
             {value: 'agent', name: 'Agents'},
             {value: 'agent-territory-index', name: 'Agent-Territory Index'},
             {value: 'config', name: 'Configuration'}
-
         ];
+
+        $scope.$watch('obj', function(returnedObject){
+            if(returnedObject) {
+                $scope.result = {};
+                $scope.result.headers = [];
+                $scope.result.rows = [];
+
+                angular.forEach(returnedObject[0], function (value, key) {
+                    $scope.result.headers.push(key);
+                });
+
+                for (var i = 0; i < 10; i++) {
+                    $scope.result.rows[i] = [];
+                    angular.forEach(returnedObject[i], function (value) {
+                        $scope.result.rows[i].push(value);
+                    });
+                }
+            }
+        });
 
     }])
 ;

@@ -1,4 +1,8 @@
-<section ng-controller="TerritoryCtrl">
-    <h1>Territory List</h1>
-    <p>List of {{params.territoryId}}</p>
+<section>
+    <form ng-submit="updateTerritory(territory._id)">
+        <input type="text" ng-model="territory.name" />
+        <input type="text" ng-model="territory.locale" />
+        <input type="text" ng-model="territory.notes" />
+        <input type="submit" value="Update" />
+    </form>
 </section>
