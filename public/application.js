@@ -8,7 +8,7 @@ angular.module(AppConfig.name).
     config(['$locationProvider',
         function($locationProvider) {
             // removes hashtag in modern browsers
-            $locationProvider.html5Mode(true).hashPrefix('!');
+            //$locationProvider.html5Mode(true).hashPrefix('!');
         }
     ]);
 

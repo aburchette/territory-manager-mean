@@ -19,6 +19,8 @@ var db = mongoose.connect(config.db, function(err) {
 	}
 });
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 // Init the express application
 var app = require('./config/express')(db);
 

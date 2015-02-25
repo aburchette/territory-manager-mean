@@ -33,6 +33,7 @@ module.exports = {
 		js: [
 			'public/config.js',
 			'public/application.js',
+            'public/services.js',
             'public/controllers.js',
             'public/modules/*/module.js',
             'public/modules/*/services.js',

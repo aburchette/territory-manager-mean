@@ -21,10 +21,6 @@ angular.module('users').config(['$stateProvider',
                 url: '/signin',
                 templateUrl: 'modules/users/views/signin.html'
             }).
-            //state('signout', {
-            //    url: '/signout',
-            //    templateUrl: 'modules/users/views/signin.html'
-            //}).
             state('forgot', {
                 url: '/password/forgot',
                 templateUrl: 'modules/users/views/forgot-password.html'

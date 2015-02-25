@@ -20,10 +20,11 @@ var AgentTerritoryIndexSchema = new Schema({
         type: Number,
         ref: 'Territory'
     },
-    checked_out: {
+    checkedOut: {
+
         type: Date
     },
-    checked_in: {
+    checkedIn: {
         type: Date
     }
 });

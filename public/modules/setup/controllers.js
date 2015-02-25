@@ -21,24 +21,21 @@ angular.module('setup').
         $scope.params = $stateParams;
 
     }]).
-    controller('ImportCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+    controller('ImportCtrl', ['$scope', '$http', '$stateParams', 'DatabaseOptions', function($scope, $http, $stateParams, DatabaseOptions){
         $scope.params = $stateParams;
 
-        // retrieve from actual models
-        $scope.items = [
-            {value: 'user', name: 'Users'},
-            {value: 'territory', name: 'Territories'},
-            {value: 'record', name: 'Records'},
-            {value: 'agent', name: 'Agents'},
-            {value: 'agent-territory-index', name: 'Agent-Territory Index'},
-            {value: 'config', name: 'Configuration'}
-        ];
+        $scope.databaseOptions = DatabaseOptions;
+
+        $scope.selectDatabase = $scope.databaseOptions[0];
+
+
 
         $scope.$watch('obj', function(returnedObject){
             if(returnedObject) {
                 $scope.result = {};
                 $scope.result.headers = [];
                 $scope.result.rows = [];
+                $scope.noRows = returnedObject.length;
 
                 angular.forEach(returnedObject[0], function (value, key) {
                     $scope.result.headers.push(key);

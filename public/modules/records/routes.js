@@ -27,12 +27,12 @@ angular.module('records').config(['$stateProvider',
                 templateUrl: 'modules/records/views/records.html'
             }).
 
-            state('records.detail', {
-                url: '/{recordId}',
+            state('record', {
+                url: '/' + user.group + '/records/{recordId}',
                 controller: 'RecordCtrl',
                 templateUrl: 'modules/records/views/record.html'
             }).
-            state('records.detail.edit', {
+            state('record.edit', {
                 url: '/edit',
                 templateUrl: 'modules/records/views/record-edit.html'
             });

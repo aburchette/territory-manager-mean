@@ -1,6 +1,6 @@
-/* Territory Organizer Mapper
+/* Territory Mapper
  * 
- * Copyright 2011-14
+ * 2011-15
  * 
  * Alan Burchette
  */
@@ -1204,7 +1204,7 @@ var tm = window.tm || {
                 temp_a = parsePolygonString(a[i]);
 
                 for(var j = 0; j < temp_a.length; j++){
-                    segments[segments.length] = new Array(temp_a[j][0], temp_a[j][1])
+                    segments[segments.length] = new Array(temp_a[j][0], temp_a[j][1]);
                 }
             }
 
@@ -3502,12 +3502,12 @@ var tm = window.tm || {
          *   intersectLineLine
          *
          *****/
-        intersectLineLine : function(a1, a2, b1, b2){
+        intersectLineLine : function(line1start, line1end, line2start, line2end){
             var result;
 
-            var ua_t = (b2.x - b1.x) * (a1.y - b1.y) - (b2.y - b1.y) * (a1.x - b1.x);
-            var ub_t = (a2.x - a1.x) * (a1.y - b1.y) - (a2.y - a1.y) * (a1.x - b1.x);
-            var u_b  = (b2.y - b1.y) * (a2.x - a1.x) - (b2.x - b1.x) * (a2.y - a1.y);
+            var ua_t = (line2end.x - line2start.x) * (line1start.y - line2start.y) - (line2end.y - line2start.y) * (line1start.x - line2start.x);
+            var ub_t = (line1end.x - line1start.x) * (line1start.y - line2start.y) - (line1end.y - line1start.y) * (line1start.x - line2start.x);
+            var u_b  = (line2end.y - line2start.y) * (line1end.x - line1start.x) - (line2end.x - line2start.x) * (line1end.y - line1start.y);
 
             if ( u_b != 0 ) {
                 var ua = ua_t / u_b;
@@ -3515,16 +3515,11 @@ var tm = window.tm || {
 
                 if ( 0 < ua && ua < 1 && 0 < ub && ub < 1 ) {
                     result = true;
-                    /*	a1.x + ua * (a2.x - a1.x), a1.y + ua * (a2.y - a1.y)  */
                 } else {
                     result = false;
                 }
             } else {
-                if ( ua_t == 0 || ub_t == 0 ) {
-                    result = false;
-                } else {
-                    result = false;
-                }
+                result = false;
             }
 
             return result;
@@ -3560,15 +3555,6 @@ var tm = window.tm || {
                 var a = y0 - y1, b = x1 - x0, c = x0 * y1 - y0 * x1;
                 return Math.abs(a * x + b * y + c) / Math.sqrt(a * a + b * b);
             }
-        },
-
-        // unknown author, unknown if functional
-        pointInPolygon : function(poly, pt){
-            for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
-                ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
-                && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
-                && (c = !c);
-            return c;
         },
 
         degreesToRadians : function(deg) {
@@ -3786,7 +3772,7 @@ var tm = window.tm || {
 
                         $.each(data, function(key, val){
                             obj[key] = val;
-                        })
+                        });
 
                         $.extend(true, self.o, obj);
 
@@ -3808,6 +3794,7 @@ var tm = window.tm || {
         }
     };
 
+/* Google Developers API code */
 function Point2D(x,y){
     if(arguments.length>0){
         this.init(x,y);
@@ -3856,8 +3843,7 @@ window.show = function(start){
     for (var i = 1; i < arguments.length; i++){
         h += arguments[i] + ' :: ';
     }
-}
-
+};
 
 // start
 $(function(){

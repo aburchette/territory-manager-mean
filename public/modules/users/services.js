@@ -15,12 +15,8 @@ angular.module('users').factory('Users', ['$resource',
 angular.module('users').factory('Authentication', [
 
 	function() {
-		var _this = this;
-
-		_this._data = {
+        return {
 			user: window.user
 		};
-
-		return _this._data;
 	}
 ]);
