@@ -1,5 +1,5 @@
-<section class="row" data-ng-controller="AuthCtrl">
-    <form name="userForm" data-ng-submit="signin(credentials)" class="signin form-horizontal" novalidate autocomplete="off">
+<section class="row" ng-controller="SigninCtrl">
+    <form name="userForm" ng-submit="signin(credentials)" class="signin form-horizontal" novalidate autocomplete="off">
         <h2 class="form-signin-heading">Sign in</h2>
         <div class="form-group">
             <div ng-show="error" class=" text-danger">

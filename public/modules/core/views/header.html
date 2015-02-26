@@ -1,12 +1,12 @@
 <div id="navbar" class="navbar-collapse">
-    <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">
         <li><a ui-sref="main" class="active">Main</a></li>
         <li><a ui-sref="records">Records</a></li>
         <li><a ui-sref="territories">Territories</a></li>
         <li><a ui-sref="map">Map</a></li>
         <li><a ui-sref="setup">Setup</a></li>
         <li><a ui-sref="help">Help</a></li>
-        <li ng-show="isSuperAdmin()"><a ui-sref="admin">Admin</a></li>
+        <li ng-if="isAuthorized(userRoles.admin)"><a ui-sref="admin">Admin</a></li>
         <li><a href="/api/signout">Signout</a></li>
     </ul>
 </div>

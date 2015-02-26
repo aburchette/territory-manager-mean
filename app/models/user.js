@@ -72,11 +72,9 @@ var UserSchema = new Schema({
 	},
 	providerData: {},
 	additionalProvidersData: {},
-    roles: {
-        type: [{
-            type: String,
-            enum: ['view', 'edit', 'admin', 'superAdmin']
-        }],
+    role: {
+        type: String,
+        enum: ['view', 'edit', 'admin', 'superAdmin'],
         default: ['view', 'edit', 'admin']
     },
 	updated: {

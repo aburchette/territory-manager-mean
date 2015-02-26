@@ -45,36 +45,59 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
 
 angular.module('users').controller('AuthCtrl', ['$scope', '$http', '$location', 'Authentication',
 	function($scope, $http, $location, Authentication) {
-		$scope.authentication = Authentication;
+        $scope.authentication = Authentication;
 
-		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/');
+        // If user is signed in then redirect back home
+        if ($scope.authentication.user) {
+            $location.path('/');
+        }
 
-		$scope.signup = function() {
-			$http.post('/api/signup', $scope.credentials).success(function(response) {
-				// If successful we assign the response to the global user model
-				$scope.authentication.user = response;
+        $scope.signup = function () {
+            $http.post('/api/signup', $scope.credentials).success(function (response) {
+                // If successful we assign the response to the global user model
+                $scope.authentication.user = response;
 
-				// And redirect to the index page
-				$location.path('/');
-			}).error(function(response) {
-				$scope.error = response.message;
-			});
-		};
+                // And redirect to the index page
+                $location.path('/');
+            }).error(function (response) {
+                $scope.error = response.message;
+            });
+        };
+    }
+]);
+
+angular.module('users').controller('SigninCtrl', ['$scope', '$location', '$rootScope', 'AUTH_EVENTS', 'AuthService',
+    function($scope, $location, $rootScope, AUTH_EVENTS, AuthService) {
+        $scope.credentials = {
+            username: '',
+            password: ''
+        };
 
 		$scope.signin = function(credentials) {
-			$http.post('/api/signin', credentials).success(function(response) {
-				// If successful we assign the response to the global user model
-				$scope.authentication.user = response;
 
-				// And redirect to the index page
-				$location.path('/');
-                // fix this later
-                // the routes are already set up with the previous group so we need to reload to get the correct group
-                window.location.reload();
-			}).error(function(response) {
-				$scope.error = response.message;
-			});
+            AuthService.signin(credentials).
+                then(function(user) {
+                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+                    $scope.setCurrentUser(user);
+                    $location.path('/');
+                    // find a better way to do this
+                    //window.location.reload();
+                }, function() {
+                    $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+                });
+
+			//$http.post('/api/signin', credentials).success(function(response) {
+			//	// If successful we assign the response to the global user model
+			//	$scope.authentication.user = response;
+            //
+			//	// And redirect to the index page
+			//	$location.path('/');
+             //   // fix this later
+             //   // the routes are already set up with the previous group so we need to reload to get the correct group
+             //   window.location.reload();
+			//}).error(function(response) {
+			//	$scope.error = response.message;
+			//});
 		};
 	}
 ]);
